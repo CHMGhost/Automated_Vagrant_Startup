@@ -1,0 +1,33 @@
+---
+# tasks file for vm_creation
+
+- hosts: all
+  become: yes
+  tasks:
+    - name: Update apt cache Ubuntu
+      apt:
+        update-cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Update yum cache RHEL 7
+      yum:
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
+
+    - name: Install MariaDB on RHEL 7
+      yum:
+        name: 
+          - python3
+          - mariadb-server
+          - mariadb-client
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install MariaDB on Ubuntu
+      apt:
+        name: 
+          - python3
+          - mariadb-client
+          - mariadb-server
+        state: present
+      when: ansible_os_family == "Debian"
