@@ -42,13 +42,13 @@ This Ansible playbook is designed to be run on the Vagrant box created with `vm_
 To run the playbook, execute the following command:
 
 ```
-ansible-playbook playbooks/tasks/main.yml
+ansible-playbook playbooks/vm_creation/tasks/main.yml
 ```
 
 This command will run the playbook on your local machine. Note that the playbook requires superuser privileges to install packages, so you may need to include `-K` in the command to be prompted for your sudo password:
 
 ```
-ansible-playbook playbooks/tasks/main.yml
+ansible-playbook playbooks/vm_creation/tasks/main.yml
 ```
 
 ## Vagrant
