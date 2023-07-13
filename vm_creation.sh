@@ -38,7 +38,7 @@ else
 Vagrant.configure("2") do |config|
   config.vm.box = "$box"
   config.vm.provision "ansible" do |ansible|
-	ansible.playbook = "/home/ghost/projects/vm/playbooks/vm_creation/tasks/main.yml"
+	ansible.playbook = "playbooks/vm_creation/tasks/main.yml"
  	ansible.compatibility_mode = "2.0"
   end
 end
